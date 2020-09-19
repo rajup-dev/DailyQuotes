@@ -19,32 +19,49 @@
       const author = document.getElementById("author");
 
       let royalblue = (document.body.style.color = "royalblue");
-      let Blue = (document.body.style.color = "Blue");
-      let Red = (document.body.style.color = "Red");
-      let Purple = (document.body.style.color = "Purple");
-      let Yellow = (document.body.style.color = "Yellow");
-      let Pink = (document.body.style.color = "Pink");
-      let Green = (document.body.style.color = "Green");
-      let Orange = (document.body.style.color = "Orange");
-      let Navy = (document.body.style.color = "Navy");
-      let Coral = (document.body.style.color = "Coral");
-      let Teal = (document.body.style.color = "Teal");
-      let Black = (document.body.style.color = "Black");
-      let Grey = (document.body.style.color = "Grey");
-      let Mustard = (document.body.style.color = "Mustard");
-      let Indigo = (document.body.style.color = "Indigo");
-      let Amber = (document.body.style.color = "Amber");
-      let Peach = (document.body.style.color = "Peach");
-      let Maroon = (document.body.style.color = "Maroon");
-      
-   
-      const colors = [red, royalblue];
+      let blue = (document.body.style.color = "blue");
+      let red = (document.body.style.color = "red");
+      let purple = (document.body.style.color = "purple");
+      let yellow = (document.body.style.color = "yellow");
+      let pink = (document.body.style.color = "pink");
+      let green = (document.body.style.color = "green");
+      let orange = (document.body.style.color = "orange");
+      let navy = (document.body.style.color = "navy");
+      let coral = (document.body.style.color = "coral");
+      let teal = (document.body.style.color = "teal");
+      let black = (document.body.style.color = "black");
+      let grey = (document.body.style.color = "grey");
+      let mustard = (document.body.style.color = "mustard");
+      let indigo = (document.body.style.color = "indigo");
+      let amber = (document.body.style.color = "amber");
+      let peach = (document.body.style.color = "peach");
+      let maroon = (document.body.style.color = "maroon");
+
+      const colors = [
+        red,
+        royalblue,
+        blue,
+        purple,
+        yellow,
+        pink,
+        green,
+        orange,
+        navy,
+        coral,
+        teal,
+        black,
+        grey,
+        mustard,
+        indigo,
+        amber,
+        peach,
+        maroon,
+      ];
 
       function randomQuote() {
         let random = Math.floor(Math.random() * Math.floor(200));
-        let colorRandom = Math.floor(Math.random() * Math.floor(2));
-
-        
+        let colorRandom = Math.floor(Math.random() * Math.floor(19));
+        document.body.style.color = colors[colorRandom];
 
         fetch("https://type.fit/api/quotes")
           .then(function (response) {
@@ -54,8 +71,6 @@
             quote.innerHTML = " ' " + data[random].text + " ' ";
             author.innerHTML = " - " + data[random].author + " - ";
           });
-        
-        document.body.style.color = colors[colorRandom];
       }
 
       randomQuote();
