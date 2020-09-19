@@ -8,8 +8,8 @@
   </head>
   <body>
     <div class="parent">
-      <h1 id="quote">0</h1>
-      <p id="author">0</p>
+      <h1 id="quote">QUote</h1>
+      <p id="author">Author</p>
     </div>
     <button onclick="randomQuote()">another quote</button>
     <p>Raju</p>
@@ -17,6 +17,8 @@
     <script>
       const quote = document.getElementById("quote");
       const author = document.getElementById("author");
+      
+      randomQuote();
 
       let royalblue = (document.body.style.color = "royalblue");
       let blue = (document.body.style.color = "blue");
@@ -71,7 +73,7 @@
           });
       }
 
-      randomQuote();
+      
     </script>
   </body>
 </html>
