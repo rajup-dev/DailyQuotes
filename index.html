@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Daily quotes</title>
+  </head>
+  <body>
+    <div class="parent">
+      <h1 id="quote">0</h1>
+      <p id="author">0</p>
+    </div>
+    <button onclick="randomQuote()">another quote</button>
+
+    <script>
+      const quote = document.getElementById("quote");
+      const author = document.getElementById("author");
+
+      let primary = (document.body.style.color = "royalblue");
+      let secondary = (document.body.style.color = "green");
+      let warring = (document.body.style.color = "red");
+
+      const colors = [primary, secondary, warring];
+
+      function randomQuote() {
+        let random = Math.floor(Math.random() * Math.floor(200));
+        let colorRandom = Math.floor(Math.random() * Math.floor(2));
+
+        document.body.style.color = colors[colorRandom];
+
+        fetch("https://type.fit/api/quotes")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            quote.innerHTML = " ' " + data[random].text + " ' ";
+            author.innerHTML = " - " + data[random].author + " - ";
+          });
+      }
+
+      randomQuote();
+    </script>
+  </body>
+</html>
