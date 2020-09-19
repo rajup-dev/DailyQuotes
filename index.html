@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="parent">
-      <h1 id="quote">QUote</h1>
+      <h1 id="quote">Quote</h1>
       <p id="author">Author</p>
     </div>
     <button onclick="randomQuote()">another quote</button>
@@ -18,7 +18,7 @@
       const quote = document.getElementById("quote");
       const author = document.getElementById("author");
       
-      randomQuote();
+      init();
 
       let royalblue = (document.body.style.color = "royalblue");
       let blue = (document.body.style.color = "blue");
@@ -58,7 +58,7 @@
         maroon,
       ];
 
-      function randomQuote() {
+      function init() {
         let random = Math.floor(Math.random() * Math.floor(200));
         let colorRandom = Math.floor(Math.random() * Math.floor(19));
         document.body.style.color = colors[colorRandom];
