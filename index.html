@@ -10,9 +10,9 @@
     <div class="parent">
       <h1 id="quote">0</h1>
       <p id="author">0</p>
-      <p>Raju</p>
     </div>
     <button onclick="randomQuote()">another quote</button>
+    <p>Raju</p>
 
     <script>
       const quote = document.getElementById("quote");
@@ -34,7 +34,7 @@
         let random = Math.floor(Math.random() * Math.floor(200));
         let colorRandom = Math.floor(Math.random() * Math.floor(2));
 
-        document.body.style.color = colors[colorRandom];
+        
 
         fetch("https://type.fit/api/quotes")
           .then(function (response) {
@@ -44,6 +44,8 @@
             quote.innerHTML = " ' " + data[random].text + " ' ";
             author.innerHTML = " - " + data[random].author + " - ";
           });
+        
+        document.body.style.color = colors[colorRandom];
       }
 
       randomQuote();
